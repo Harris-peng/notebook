@@ -1,0 +1,739 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>JsonSchame · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    笔记本
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.1" data-path="json-schame.html">
+            
+                <a href="json-schame.html">
+            
+                    
+                    JsonSchame
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >JsonSchame</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="jsonschame">JSONSchame</h1>
+<h2 id="1-&#x5B9A;&#x4E49;">1. &#x5B9A;&#x4E49;</h2>
+<p>JSONSchema  &#x662F;&#x4E00;&#x79CD;&#x57FA;&#x4E8E; JSON &#x683C;&#x5F0F;&#x5B9A;&#x4E49; JSON &#x6570;&#x636E;&#x7ED3;&#x6784;&#x7684;&#x89C4;&#x8303;</p>
+<ul>
+<li>&#x63CF;&#x8FF0;&#x73B0;&#x6709;&#x6570;&#x636E;&#x683C;&#x5F0F;&#x3002;</li>
+<li>&#x5E72;&#x51C0;&#x7684;&#x4EBA;&#x7C7B;&#x548C;&#x673A;&#x5668;&#x53EF;&#x8BFB;&#x7684;&#x6587;&#x6863;&#x3002;</li>
+<li>&#x5B8C;&#x6574;&#x7684;&#x7ED3;&#x6784;&#x9A8C;&#x8BC1;&#xFF0C;&#x6709;&#x5229;&#x4E8E;&#x81EA;&#x52A8;&#x5316;&#x6D4B;&#x8BD5;&#x3002;</li>
+<li>&#x5B8C;&#x6574;&#x7684;&#x7ED3;&#x6784;&#x9A8C;&#x8BC1;&#xFF0C;&#x53EF;&#x7528;&#x4E8E;&#x9A8C;&#x8BC1;&#x5BA2;&#x6237;&#x7AEF;&#x63D0;&#x4EA4;&#x7684;&#x6570;&#x636E;&#x3002;</li>
+</ul>
+<h2 id="2-&#x4F18;&#x70B9;">2. &#x4F18;&#x70B9;</h2>
+<p>JSON Schema&#x53EF;&#x4EE5;&#x89E3;&#x51B3;&#x4E0B;&#x5217;&#x6709;&#x5173;&#x4E00;&#x81F4;&#x6027;&#x9A8C;&#x8BC1;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
+<ul>
+<li>&#x503C;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x662F;&#x5426;&#x6B63;&#x786E;&#xFF1A;&#x53EF;&#x4EE5;&#x5177;&#x4F53;&#x89C4;&#x5B9A;&#x4E00;&#x4E2A;&#x503C;&#x662F;&#x6570;&#x5B57;&#x3001;&#x5B57;&#x7B26;&#x4E32;&#x7B49;&#x7C7B;&#x578B;&#xFF1B;</li>
+<li>&#x662F;&#x5426;&#x5305;&#x542B;&#x6240;&#x9700;&#x7684;&#x6570;&#x636E;&#xFF1A;&#x53EF;&#x4EE5;&#x89C4;&#x5B9A;&#x54EA;&#x4E9B;&#x6570;&#x636E;&#x662F;&#x9700;&#x8981;&#x7684;&#xFF0C;&#x54EA;&#x4E9B;&#x662F;&#x4E0D;&#x9700;&#x8981;&#x7684;&#xFF1B;</li>
+<li>&#x503C;&#x7684;&#x5F62;&#x5F0F;&#x662F;&#x4E0D;&#x662F;&#x6211;&#x9700;&#x8981;&#x7684;&#xFF1A;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x8303;&#x56F4;&#x3001;&#x6700;&#x5C0F;&#x503C;&#x548C;&#x6700;&#x5927;&#x503C;&#x3002;</li>
+</ul>
+<h2 id="3-&#x57FA;&#x7840;&#x8BED;&#x6CD5;">3. &#x57FA;&#x7840;&#x8BED;&#x6CD5;</h2>
+<blockquote>
+<p><strong>$schema</strong></p>
+</blockquote>
+<p>&#x58F0;&#x660E;jsonschema&#x67B6;&#x6784;&#x5173;&#x952E;&#x5B57;&#xFF0C;&#x6307;&#x51FA;&#x6B64;&#x67B6;&#x662F;&#x6784;&#x6839;&#x636E;&#x6807;&#x51C6;&#x7684;&#x7279;&#x5B9A;&#x8349;&#x7A3F;&#x7F16;&#x5199;&#x7684;&#x3002;
+<code>&quot;$schema&quot;: &quot;http://json-schema.org/draft-07/schema#&quot;</code></p>
+<blockquote>
+<p><strong>$id</strong> </p>
+</blockquote>
+<p>&#x67B6;&#x6784;&#x5173;&#x952E;&#x5B57;&#xFF0C;&#x5B9A;&#x4E49;&#x6A21;&#x5F0F;&#x7684;URI&#xFF0C;&#x5E76;&#x89E3;&#x6790;&#x6A21;&#x5F0F;&#x4E2D;&#x5176;&#x4ED6;URI&#x5F15;&#x7528;&#x7684;&#x57FA;URI&#x3002;</p>
+<blockquote>
+<p><strong>type</strong> </p>
+</blockquote>
+<p>type &#x6307;&#x5B9A;&#x5BF9;&#x8C61;&#x6216;&#x5C5E;&#x6027;&#x7684;&#x7C7B;&#x578B;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">type&#x5173;&#x952E;&#x5B57;</th>
+<th style="text-align:center">&#x6307;&#x5B9A;&#x5BF9;&#x8C61;&#x6216;&#x5C5E;&#x6027;&#x7684;&#x7C7B;&#x578B;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">string</td>
+<td style="text-align:center">&#x5B57;&#x7B26;&#x4E32;</td>
+</tr>
+<tr>
+<td style="text-align:center">number</td>
+<td style="text-align:center">&#x6570;&#x5B57;</td>
+</tr>
+<tr>
+<td style="text-align:center">integer</td>
+<td style="text-align:center">&#x6574;&#x578B;</td>
+</tr>
+<tr>
+<td style="text-align:center">boolean</td>
+<td style="text-align:center">&#x5E03;&#x5C14;&#x503C;</td>
+</tr>
+<tr>
+<td style="text-align:center">object</td>
+<td style="text-align:center">&#x5BF9;&#x8C61;</td>
+</tr>
+<tr>
+<td style="text-align:center">array</td>
+<td style="text-align:center">&#x5217;</td>
+</tr>
+<tr>
+<td style="text-align:center">array (with &#x201C;uniqueItems&#x201D;:true)</td>
+<td style="text-align:center">&#x552F;&#x4E00;&#x5217;</td>
+</tr>
+<tr>
+<td style="text-align:center">null</td>
+<td style="text-align:center">&#x7A7A;</td>
+</tr>
+<tr>
+<td style="text-align:center">any</td>
+<td style="text-align:center">&#x4EFB;&#x610F;</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>title</strong> </p>
+</blockquote>
+<p>title &#x5173;&#x952E;&#x5B57;&#x6807;&#x9898;&#xFF0C;&#x53EF;&#x7701;&#x7565;</p>
+<blockquote>
+<p><strong>description</strong></p>
+</blockquote>
+<p>description&#x5173;&#x952E;&#x5B57;&#x6CE8;&#x91CA;&#x542B;&#x4E49;&#xFF0C;&#x53EF;&#x7701;&#x7565;</p>
+<blockquote>
+<p><strong>required</strong></p>
+</blockquote>
+<p>required&#x5173;&#x952E;&#x5B57;&#x662F;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x6570;&#x7EC4;&#xFF0C;&#x9A8C;&#x8BC1;&#x5FC5;&#x9700;&#x5305;&#x542B;&#x7684;&#x952E;&#x3002;</p>
+<h2 id="4-&#x793A;&#x4F8B;">4. &#x793A;&#x4F8B;</h2>
+<p>type | object&#x3001;array&#x3001;string&#x3001;integer&#x3001;number&#x3001;boolean</p>
+<h3 id="41-typeobject">4.1 <strong>type|Object</strong></h3>
+<pre><code class="lang-javascript">{
+    <span class="hljs-string">&quot;$schema&quot;</span>: <span class="hljs-string">&quot;http://json-schema.org/draft-04/schema#&quot;</span>,
+    <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;Product&quot;</span>,
+    <span class="hljs-string">&quot;description&quot;</span>: <span class="hljs-string">&quot;A product from Acme&apos;s catalog&quot;</span>,
+    <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+    <span class="hljs-string">&quot;properties&quot;</span>: {
+        <span class="hljs-string">&quot;id&quot;</span>: {
+            <span class="hljs-string">&quot;description&quot;</span>: <span class="hljs-string">&quot;The unique identifier for a product&quot;</span>,
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;integer&quot;</span>
+        },
+        <span class="hljs-string">&quot;name&quot;</span>: {
+            <span class="hljs-string">&quot;description&quot;</span>: <span class="hljs-string">&quot;Name of the product&quot;</span>,
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+        },
+        <span class="hljs-string">&quot;price&quot;</span>: {
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;number&quot;</span>,
+            <span class="hljs-string">&quot;minimum&quot;</span>: <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;exclusiveMinimum&quot;</span>: <span class="hljs-literal">true</span>
+        }
+    },
+    <span class="hljs-string">&quot;required&quot;</span>: [<span class="hljs-string">&quot;id&quot;</span>, <span class="hljs-string">&quot;name&quot;</span>, <span class="hljs-string">&quot;price&quot;</span>]
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x5173;&#x952E;&#x5B57;</th>
+<th style="text-align:center">&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">type</td>
+<td style="text-align:center">&#x7C7B;&#x578B;</td>
+</tr>
+<tr>
+<td style="text-align:center">properties</td>
+<td style="text-align:center">&#x5B9A;&#x4E49;&#x5C5E;&#x6027;</td>
+</tr>
+<tr>
+<td style="text-align:center">required</td>
+<td style="text-align:center">&#x5FC5;&#x9700;&#x5C5E;&#x6027;</td>
+</tr>
+<tr>
+<td style="text-align:center">maxProperties</td>
+<td style="text-align:center">&#x6700;&#x5927;&#x5C5E;&#x6027;&#x4E2A;&#x6570;</td>
+</tr>
+<tr>
+<td style="text-align:center">minProperties</td>
+<td style="text-align:center">&#x6700;&#x5C0F;&#x5C5E;&#x6027;&#x4E2A;&#x6570;</td>
+</tr>
+<tr>
+<td style="text-align:center">additionalProperties</td>
+<td style="text-align:center">true or false or object    </td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<blockquote>
+<p>&#x5907;&#x6CE8;</p>
+</blockquote>
+</blockquote>
+<p><code>additionalProperties</code>&#x5173;&#x952E;&#x5B57;&#x7528;&#x4E8E;&#x63A7;&#x5236;&#x989D;&#x5916;&#x5185;&#x5BB9;&#x7684;&#x5904;&#x7406;&#xFF0C;&#x5373;&#x540D;&#x79F0;&#x672A;&#x5728;<code>properties</code>&#x5173;&#x952E;&#x5B57;&#x4E2D;&#x5217;&#x51FA;&#x7684;&#x5C5E;&#x6027; &#x3002;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5141;&#x8BB8;&#x4EFB;&#x4F55;&#x5176;&#x4ED6;&#x5C5E;&#x6027;&#x3002;
+<code>additionalProperties</code>&#x5173;&#x952E;&#x5B57;&#x53EF;&#x4EE5;&#x662F;&#x4E00;&#x4E2A;&#x5E03;&#x5C14;&#x503C;&#x6216;&#x5BF9;&#x8C61;&#x3002;&#x5982;&#x679C;<code>additionalProperties</code>&#x662F;&#x5E03;&#x5C14;&#x503C;&#x5E76;&#x8BBE;&#x7F6E;&#x4E3A;<code>false</code>&#xFF0C;&#x5219;&#x4E0D;&#x5141;&#x8BB8;&#x5176;&#x4ED6;&#x5C5E;&#x6027;&#x3002;</p>
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+  <span class="hljs-string">&quot;properties&quot;</span>: {
+    <span class="hljs-string">&quot;number&quot;</span>:      { <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;number&quot;</span> },
+    <span class="hljs-string">&quot;street_name&quot;</span>: { <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span> },
+    <span class="hljs-string">&quot;street_type&quot;</span>: { <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+                     <span class="hljs-string">&quot;enum&quot;</span>: [<span class="hljs-string">&quot;Street&quot;</span>, <span class="hljs-string">&quot;Avenue&quot;</span>, <span class="hljs-string">&quot;Boulevard&quot;</span>]
+                   }
+  },
+  <span class="hljs-string">&quot;additionalProperties&quot;</span>: <span class="hljs-literal">false</span>
+}
+</code></pre>
+<p><code>{ &quot;number&quot;: 1600, &quot;street_name&quot;: &quot;Pennsylvania&quot;, &quot;street_type&quot;: &quot;Avenue&quot; }</code> <span style="color: blue">&#x221A;</span> <br>
+<code>{ &quot;number&quot;: 1600, &quot;street_name&quot;: &quot;Pennsylvania&quot;, &quot;street_type&quot;: &quot;Avenue&quot;, &quot;direction&quot;: &quot;NW&quot; }</code> <span style="color: red">&#xD7;</span></p>
+<h3 id="42-typearray">4.2 <strong>type|Array</strong></h3>
+<pre><code class="lang-javascript">
+{
+    <span class="hljs-string">&quot;$schema&quot;</span>: <span class="hljs-string">&quot;http://json-schema.org/draft-04/schema#&quot;</span>,
+    <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;Product&quot;</span>,
+    <span class="hljs-string">&quot;description&quot;</span>: <span class="hljs-string">&quot;A product from Acme&apos;s catalog&quot;</span>,
+    <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;array&quot;</span>,
+    <span class="hljs-string">&quot;items&quot;</span>: {
+        <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+     },
+     <span class="hljs-string">&quot;minItems&quot;</span>: <span class="hljs-number">1</span>,
+     <span class="hljs-string">&quot;uniqueItems&quot;</span>: <span class="hljs-literal">true</span>
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x5173;&#x952E;&#x5B57;</th>
+<th style="text-align:center">&#x63CF;&#x8FF0;</th>
+<th style="text-align:center">&#x793A;&#x4F8B;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">items</td>
+<td style="text-align:center">array &#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x7C7B;&#x578B;</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">minItems</td>
+<td style="text-align:center">&#x7EA6;&#x675F;&#x5C5E;&#x6027;&#xFF0C;&#x6570;&#x7EC4;&#x6700;&#x5C0F;&#x7684;&#x5143;&#x7D20;&#x4E2A;&#x6570;</td>
+<td style="text-align:center">-     </td>
+</tr>
+<tr>
+<td style="text-align:center">maxItems</td>
+<td style="text-align:center">&#x7EA6;&#x675F;&#x5C5E;&#x6027;&#xFF0C;&#x6570;&#x7EC4;&#x6700;&#x5927;&#x7684;&#x5143;&#x7D20;&#x4E2A;&#x6570;</td>
+<td style="text-align:center">-     </td>
+</tr>
+<tr>
+<td style="text-align:center">uniqueItems</td>
+<td style="text-align:center">&#x7EA6;&#x675F;&#x5C5E;&#x6027;&#xFF0C;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x90FD;&#x4E0D;&#x76F8;&#x540C;</td>
+<td style="text-align:center">- </td>
+</tr>
+<tr>
+<td style="text-align:center">additionalProperties</td>
+<td style="text-align:center">&#x7EA6;&#x675F;items&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x4E0D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;</td>
+<td style="text-align:center"><a href="https://json-schema.org/understanding-json-schema/reference/array.html" target="_blank">&#x793A;&#x4F8B;</a></td>
+</tr>
+<tr>
+<td style="text-align:center">Dependencies</td>
+<td style="text-align:center">&#x5C5E;&#x6027;&#x4F9D;&#x8D56;</td>
+<td style="text-align:center"><a href="https://json-schema.org/understanding-json-schema/reference/object.html" target="_blank">&#x793A;&#x4F8B;</a></td>
+</tr>
+<tr>
+<td style="text-align:center">patternProperties</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center"><a href="https://json-schema.org/understanding-json-schema/reference/array.html" target="_blank">&#x793A;&#x4F8B;</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="43-typestring">4.3 <strong>type|String</strong></h3>
+<pre><code class="lang-javascript">{
+   <span class="hljs-string">&quot;$schema&quot;</span>: <span class="hljs-string">&quot;http://json-schema.org/draft-04/schema#&quot;</span>,
+    <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;Product&quot;</span>,
+    <span class="hljs-string">&quot;description&quot;</span>: <span class="hljs-string">&quot;A product from Acme&apos;s catalog&quot;</span>,
+    <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+    <span class="hljs-string">&quot;properties&quot;</span>: {
+        <span class="hljs-string">&quot;ip&quot;</span>: {
+            <span class="hljs-string">&quot;mail&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+            <span class="hljs-string">&quot;pattern&quot;</span>:<span class="hljs-string">&quot;w+([-+.]w+)*@w+([-.]w+)*.w+([-.]w+)*&quot;</span>
+        },
+        <span class="hljs-string">&quot;host&quot;</span>: {
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;phoneNumber&quot;</span>,
+            <span class="hljs-string">&quot;pattern&quot;</span>:<span class="hljs-string">&quot;((d{3,4})|d{3,4}-)?d{7,8}(-d{3})*&quot;</span>
+        },
+    },
+    <span class="hljs-string">&quot;required&quot;</span>: [<span class="hljs-string">&quot;ip&quot;</span>, <span class="hljs-string">&quot;host&quot;</span>]
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x5173;&#x952E;&#x5B57;</th>
+<th style="text-align:center">&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">maxLength</td>
+<td style="text-align:center">&#x5B9A;&#x4E49;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x6700;&#x5927;&#x957F;&#x5EA6;&#xFF0C;&gt;=0    </td>
+</tr>
+<tr>
+<td style="text-align:center">minLength</td>
+<td style="text-align:center">&#x5B9A;&#x4E49;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x6700;&#x5C0F;&#x957F;&#x5EA6;&#xFF0C;&gt;=0     </td>
+</tr>
+<tr>
+<td style="text-align:center">pattern</td>
+<td style="text-align:center">&#x7528;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x7EA6;&#x675F;&#x5B57;&#x7B26;&#x4E32;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="44-typeinteger">4.4 <strong>type|Integer</strong></h3>
+<pre><code class="lang-javascript">{
+    <span class="hljs-string">&quot;$schema&quot;</span>: <span class="hljs-string">&quot;http://json-schema.org/draft-04/schema#&quot;</span>,
+    <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;Product&quot;</span>,
+    <span class="hljs-string">&quot;description&quot;</span>: <span class="hljs-string">&quot;A product from Acme&apos;s catalog&quot;</span>,
+    <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+    <span class="hljs-string">&quot;properties&quot;</span>: {
+        <span class="hljs-string">&quot;name&quot;</span>: {
+            <span class="hljs-string">&quot;description&quot;</span>: <span class="hljs-string">&quot;Name of the product&quot;</span>,
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+        },
+        <span class="hljs-string">&quot;price&quot;</span>: {
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;integer&quot;</span>,
+            <span class="hljs-string">&quot;minimum&quot;</span>: <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;exclusiveMinimum&quot;</span>: <span class="hljs-literal">true</span>
+        }
+    },
+    <span class="hljs-string">&quot;required&quot;</span>: [<span class="hljs-string">&quot;id&quot;</span>, <span class="hljs-string">&quot;name&quot;</span>, <span class="hljs-string">&quot;price&quot;</span>]
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">&#x5173;&#x952E;&#x5B57;</th>
+<th style="text-align:center">&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">minimum</td>
+<td style="text-align:center">&#x6700;&#x5C0F;&#x503C;&#x5373;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;</td>
+</tr>
+<tr>
+<td style="text-align:center">exclusiveMinimum</td>
+<td style="text-align:center">&#x5982;&#x679C;&#x5B58;&#x5728; &quot;exclusiveMinimum&quot; &#x5E76;&#x4E14;&#x5177;&#x6709;&#x5E03;&#x5C14;&#x503C; true&#xFF0C;&#x5982;&#x679C;&#x5B83;&#x4E25;&#x683C;&#x610F;&#x4E49;&#x4E0A;&#x5927;&#x4E8E; &quot;minimum&quot; &#x7684;&#x503C;&#x5219;&#x5B9E;&#x4F8B;&#x6709;&#x6548;&#x3002;     </td>
+</tr>
+<tr>
+<td style="text-align:center">maximum</td>
+<td style="text-align:center">&#x7EA6;&#x675F;&#x5C5E;&#x6027;&#xFF0C;&#x6700;&#x5927;&#x503C;     </td>
+</tr>
+<tr>
+<td style="text-align:center">exclusiveMaximum</td>
+<td style="text-align:center">&#x5982;&#x679C;&#x5B58;&#x5728; &quot;exclusiveMinimum&quot; &#x5E76;&#x4E14;&#x5177;&#x6709;&#x5E03;&#x5C14;&#x503C; true&#xFF0C;&#x5982;&#x679C;&#x5B83;&#x4E25;&#x683C;&#x610F;&#x4E49;&#x4E0A;&#x5C0F;&#x4E8E; &quot;maximum&quot; &#x7684;&#x503C;&#x5219;&#x5B9E;&#x4F8B;&#x6709;&#x6548;&#x3002;     </td>
+</tr>
+<tr>
+<td style="text-align:center">multipleOf</td>
+<td style="text-align:center">&#x662F;&#x67D0;&#x6570;&#x7684;&#x500D;&#x6570;&#xFF0C;&#x5FC5;&#x987B;&#x5927;&#x4E8E;0&#x7684;&#x6574;&#x6570;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="45-typenumber">4.5 <strong>type|Number</strong></h3>
+<pre><code class="lang-javascript">
+{
+    <span class="hljs-string">&quot;$schema&quot;</span>: <span class="hljs-string">&quot;http://json-schema.org/draft-04/schema#&quot;</span>,
+    <span class="hljs-string">&quot;title&quot;</span>: <span class="hljs-string">&quot;Product&quot;</span>,
+    <span class="hljs-string">&quot;description&quot;</span>: <span class="hljs-string">&quot;A product from Acme&apos;s catalog&quot;</span>,
+    <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+    <span class="hljs-string">&quot;properties&quot;</span>: {
+        <span class="hljs-string">&quot;name&quot;</span>: {
+            <span class="hljs-string">&quot;description&quot;</span>: <span class="hljs-string">&quot;Name of the product&quot;</span>,
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+        },
+        <span class="hljs-string">&quot;price&quot;</span>: {
+            <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;number&quot;</span>,
+            <span class="hljs-string">&quot;minimum&quot;</span>: <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;exclusiveMinimum&quot;</span>: <span class="hljs-literal">true</span>
+        }
+    },
+    <span class="hljs-string">&quot;required&quot;</span>: [<span class="hljs-string">&quot;id&quot;</span>, <span class="hljs-string">&quot;name&quot;</span>, <span class="hljs-string">&quot;price&quot;</span>]
+}
+</code></pre>
+<h2 id="5-&#x903B;&#x8F91;&#x7EC4;&#x5408;">5. &#x903B;&#x8F91;&#x7EC4;&#x5408;</h2>
+<p>&#x5173;&#x952E;&#x5B57;&#xFF1A;allOf, anyOf, oneOf, not</p>
+<h3 id="51-allof">5.1 <strong>allOf</strong></h3>
+<p>&#x6EE1;&#x8DB3;allOf&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x6240;&#x6709;Json Schema&#x3002;</p>
+<pre><code class="lang-javascript">{
+    <span class="hljs-string">&quot;allOf&quot;</span> : [
+        Schema_base
+    ]
+    <span class="hljs-string">&quot;properties&quot;</span> : {
+        <span class="hljs-string">&quot;other_pro1&quot;</span> : {<span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;string&quot;</span>},
+        <span class="hljs-string">&quot;other_pro2&quot;</span> : {<span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;string&quot;</span>}
+    },
+    <span class="hljs-string">&quot;required&quot;</span> : [<span class="hljs-string">&quot;other_pro1&quot;</span>, <span class="hljs-string">&quot;other_pro2&quot;</span>]
+}
+</code></pre>
+<p>Json&#x6570;&#x636E;&#x65E2;&#x9700;&#x8981;&#x6EE1;&#x8DB3;Schema_base&#xFF0C;&#x53C8;&#x8981;&#x5177;&#x5907;&#x5C5E;&#x6027;&quot;other_pro1&quot;&#x3001;&quot;other_pro2&quot;&#x3002;</p>
+<blockquote>
+<p>&#x793A;&#x4F8B;</p>
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;allOf&quot;</span>: [
+    { <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span> },
+    { <span class="hljs-string">&quot;maxLength&quot;</span>: <span class="hljs-number">5</span> }
+  ]
+}
+<span class="hljs-string">&quot;short&quot;</span> <span class="hljs-comment">// &#x221A;</span>
+<span class="hljs-string">&quot;too long&quot;</span> <span class="hljs-comment">//&#xD7;</span>
+</code></pre>
+</blockquote>
+<h3 id="52-anyof">5.2 <strong>anyOf</strong></h3>
+<p>&#x6EE1;&#x8DB3;anyOf&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x4EFB;&#x610F;&#x4E2A;Schema&#x3002;</p>
+<pre><code class="lang-javascript">{
+    <span class="hljs-string">&quot;anyOf&quot;</span> : [
+        Schema1,
+        Schema2,
+        ...
+    ]
+}
+</code></pre>
+<h3 id="53-oneof">5.3 <strong>oneOf</strong></h3>
+<p>&#x6EE1;&#x8DB3;&#x4E14;&#x4EC5;&#x6EE1;&#x8DB3;oneOf&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;Schema&#xFF0C;&#x8FD9;&#x4E5F;&#x662F;&#x4E0E;anyOf&#x7684;&#x533A;&#x522B;&#x3002;</p>
+<pre><code class="lang-javascript">{
+    <span class="hljs-string">&quot;oneOf&quot;</span> : [
+        Schema1,
+        Schema2,
+        ...
+    ]
+}
+</code></pre>
+<h3 id="54-not">5.4 <strong>not</strong></h3>
+<p>&#x8FD9;&#x4E2A;&#x5173;&#x952E;&#x5B57;&#x4E0D;&#x4E25;&#x683C;&#x89C4;&#x5B9A;Json&#x6570;&#x636E;&#x5E94;&#x6EE1;&#x8DB3;&#x4EC0;&#x4E48;&#x8981;&#x6C42;&#xFF0C;&#x5B83;&#x544A;&#x8BC9;Json&#x4E0D;&#x80FD;&#x6EE1;&#x8DB3;not&#x6240;&#x5BF9;&#x5E94;&#x7684;Schema</p>
+<pre><code class="lang-javascript">{
+    <span class="hljs-string">&quot;not&quot;</span> : {<span class="hljs-string">&quot;type&quot;</span> : <span class="hljs-string">&quot;string&quot;</span>}
+}
+</code></pre>
+<h2 id="6-&#x590D;&#x6742;&#x7ED3;&#x6784;">6. &#x590D;&#x6742;&#x7ED3;&#x6784;</h2>
+<h3 id="61-&#x901A;&#x8FC7;definitions&#x5173;&#x952E;&#x5B57;">6.1 &#x901A;&#x8FC7;<code>definitions</code>&#x5173;&#x952E;&#x5B57;</h3>
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;$schema&quot;</span>: <span class="hljs-string">&quot;http://json-schema.org/draft-07/schema#&quot;</span>,
+  <span class="hljs-string">&quot;definitions&quot;</span>: {
+    <span class="hljs-string">&quot;address&quot;</span>: {
+      <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+      <span class="hljs-string">&quot;properties&quot;</span>: {
+        <span class="hljs-string">&quot;street_address&quot;</span>: { <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span> },
+        <span class="hljs-string">&quot;city&quot;</span>:           { <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span> },
+        <span class="hljs-string">&quot;state&quot;</span>:          { <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span> }
+      },
+      <span class="hljs-string">&quot;required&quot;</span>: [<span class="hljs-string">&quot;street_address&quot;</span>, <span class="hljs-string">&quot;city&quot;</span>, <span class="hljs-string">&quot;state&quot;</span>]
+    }
+  },
+  <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+  <span class="hljs-string">&quot;properties&quot;</span>: {
+    <span class="hljs-string">&quot;billing_address&quot;</span>: { <span class="hljs-string">&quot;$ref&quot;</span>: <span class="hljs-string">&quot;#/definitions/address&quot;</span> },
+    <span class="hljs-string">&quot;shipping_address&quot;</span>: { <span class="hljs-string">&quot;$ref&quot;</span>: <span class="hljs-string">&quot;#/definitions/address&quot;</span> }
+  }
+}
+
+{
+  <span class="hljs-string">&quot;shipping_address&quot;</span>: {
+    <span class="hljs-string">&quot;street_address&quot;</span>: <span class="hljs-string">&quot;1600 Pennsylvania Avenue NW&quot;</span>,
+    <span class="hljs-string">&quot;city&quot;</span>: <span class="hljs-string">&quot;Washington&quot;</span>,
+    <span class="hljs-string">&quot;state&quot;</span>: <span class="hljs-string">&quot;DC&quot;</span>
+  },
+  <span class="hljs-string">&quot;billing_address&quot;</span>: {
+    <span class="hljs-string">&quot;street_address&quot;</span>: <span class="hljs-string">&quot;1st Street SE&quot;</span>,
+    <span class="hljs-string">&quot;city&quot;</span>: <span class="hljs-string">&quot;Washington&quot;</span>,
+    <span class="hljs-string">&quot;state&quot;</span>: <span class="hljs-string">&quot;DC&quot;</span>
+  }
+}
+</code></pre>
+<h3 id="62-id">6.2 <strong>$id</strong></h3>
+<p>&#x5B83;&#x58F0;&#x660E;&#x4E86;Schame&#x7684;&#x552F;&#x4E00;&#x6807;&#x8BC6;&#x7B26;&#x3002;
+&#x5B83;&#x58F0;&#x660E;&#x4E86;&#x4E00;&#x4E2A;&#x7528;&#x4E8E;$ref&#x89E3;&#x6790;URI&#x7684;&#x57FA;URI &#x3002;</p>
+<pre><code class="lang-javascript">{
+  <span class="hljs-string">&quot;$schema&quot;</span>: <span class="hljs-string">&quot;http://json-schema.org/draft-07/schema#&quot;</span>,
+  <span class="hljs-string">&quot;definitions&quot;</span>: {
+    <span class="hljs-string">&quot;address&quot;</span>: {
+      <span class="hljs-string">&quot;$id&quot;</span>: <span class="hljs-string">&quot;#address&quot;</span>,
+      <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+      <span class="hljs-string">&quot;properties&quot;</span>: {
+        <span class="hljs-string">&quot;street_address&quot;</span>: { <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span> },
+        <span class="hljs-string">&quot;city&quot;</span>:           { <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span> },
+        <span class="hljs-string">&quot;state&quot;</span>:          { <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span> }
+      },
+      <span class="hljs-string">&quot;required&quot;</span>: [<span class="hljs-string">&quot;street_address&quot;</span>, <span class="hljs-string">&quot;city&quot;</span>, <span class="hljs-string">&quot;state&quot;</span>]
+    }
+  },
+  <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+  <span class="hljs-string">&quot;properties&quot;</span>: {
+    <span class="hljs-string">&quot;billing_address&quot;</span>: { <span class="hljs-string">&quot;$ref&quot;</span>: <span class="hljs-string">&quot;#address&quot;</span> },
+    <span class="hljs-string">&quot;shipping_address&quot;</span>: { <span class="hljs-string">&quot;$ref&quot;</span>: <span class="hljs-string">&quot;#address&quot;</span> }
+  }
+}
+</code></pre>
+<h2 id="7-&#x901A;&#x7528;&#x5173;&#x952E;&#x5B57;">7. &#x901A;&#x7528;&#x5173;&#x952E;&#x5B57;</h2>
+<h3 id="71-enum">7.1 <strong>enum</strong></h3>
+<p>&#x53EF;&#x4EE5;&#x5728;&#x4EFB;&#x4F55;json schema&#x4E2D;&#x51FA;&#x73B0;&#xFF0C;&#x5176;value&#x662F;&#x4E00;&#x4E2A;list&#xFF0C;&#x8868;&#x793A;json&#x6570;&#x636E;&#x7684;&#x53D6;&#x503C;&#x53EA;&#x80FD;&#x662F;list&#x4E2D;&#x7684;&#x67D0;&#x4E2A;&#x3002;</p>
+<pre><code class="lang-javascript">{
+    <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-string">&quot;enum&quot;</span>: [<span class="hljs-string">&quot;red&quot;</span>, <span class="hljs-string">&quot;amber&quot;</span>, <span class="hljs-string">&quot;green&quot;</span>]
+}
+</code></pre>
+<p>&#x4E0A;&#x4F8B;&#x7684;schema&#x89C4;&#x5B9A;&#x6570;&#x636E;&#x53EA;&#x80FD;&#x662F;&#x4E00;&#x4E2A;string&#xFF0C;&#x4E14;&#x53EA;&#x80FD;&#x662F;&quot;red&quot;&#x3001;&quot;amber&quot;&#x3001;&quot;green&quot;&#x4E4B;&#x4E00;&#x3002;</p>
+<h3 id="72-metadata">7.2 <strong>metadata</strong></h3>
+<p>&#x5173;&#x952E;&#x5B57;&#xFF1A;title&#xFF0C;description&#xFF0C;default&#xFF0C;example</p>
+<pre><code class="lang-javascript">{
+    <span class="hljs-string">&quot;title&quot;</span> : <span class="hljs-string">&quot;Match anything&quot;</span>,
+    <span class="hljs-string">&quot;description&quot;</span> : <span class="hljs-string">&quot;This is a schema that matches anything.&quot;</span>,
+    <span class="hljs-string">&quot;default&quot;</span> : <span class="hljs-string">&quot;Default value&quot;</span>,
+    <span class="hljs-string">&quot;examples&quot;</span> : [
+        <span class="hljs-string">&quot;Anything&quot;</span>,
+        <span class="hljs-number">4035</span>
+    ]
+}
+</code></pre>
+<p>&#x53EA;&#x4F5C;&#x4E3A;&#x63CF;&#x8FF0;&#x4F5C;&#x7528;&#xFF0C;&#x4E0D;&#x5F71;&#x54CD;&#x5BF9;&#x6570;&#x636E;&#x7684;&#x6821;&#x9A8C;&#x3002;</p>
+<h2 id="8-&#x53C2;&#x8003;">8. &#x53C2;&#x8003;</h2>
+<p><a href="http://json-schema.org/learn/getting-started-step-by-step.html#starting" target="_blank">http://json-schema.org</a><br>
+<a href="https://s://blog.csdn.net/silence_xiao/article/details/81303935" target="_blank">understanding-json-schema</a><br>
+<a href="https://json-schema.org/understanding-json-schema/index.html" target="_blank">&#x82E6;&#x529B;&#x7B28;&#x7B28;</a><br>
+<a href="httpwww.cnblogs.com/terencezhou/p/10474617.html">silence_xiao</a><br>
+<a href="https://www.jianshu.com/p/ddf23d33f8a1" target="_blank">47&#x53F7;&#x516C;&#x8DEF;</a><br>
+<a href="https://www.cnblogs.com/huanghongbo/p/8628607.html" target="_blank">&#x7EA2;&#x65E0;&#x9152;&#x4F24; </a><br>
+<a href="https://www.cnblogs.com/crazymagic/articles/10472318.html" target="_blank"> Crazymagic  </a><br></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 笔记本">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"JsonSchame","level":"1.2.1","depth":2,"previous":{"title":"笔记本","level":"1.2","depth":1,"path":"book/README.md","ref":"book/README.md","articles":[{"title":"JsonSchame","level":"1.2.1","depth":2,"path":"book/json-schame.md","ref":"book/json-schame.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"book/json-schame.md","mtime":"2019-09-01T11:23:27.365Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-01T11:24:12.388Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
