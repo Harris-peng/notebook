@@ -1,21 +1,19 @@
-#JSONSchame
+# JSONSchame
 
-##1. 定义
+## 1. 定义
 JSONSchema  是一种基于 JSON 格式定义 JSON 数据结构的规范
 * 描述现有数据格式。
 * 干净的人类和机器可读的文档。
 * 完整的结构验证，有利于自动化测试。
 * 完整的结构验证，可用于验证客户端提交的数据。
 
-##2. 优点
+## 2. 优点
 JSON Schema可以解决下列有关一致性验证的问题。
 * 值的数据类型是否正确：可以具体规定一个值是数字、字符串等类型；
 * 是否包含所需的数据：可以规定哪些数据是需要的，哪些是不需要的；
 * 值的形式是不是我需要的：可以指定范围、最小值和最大值。
 
-
-
-##3. 基础语法
+### 3.1 基础语法
 
 >**$schema**
 
@@ -57,7 +55,7 @@ required关键字是一个字符串数组，验证必需包含的键。
 type | object、array、string、integer、number、boolean
 
 ### 4.1 **type|Object**
-```javascript
+```
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Product",
@@ -97,7 +95,7 @@ additionalProperties|true or false or object
 `additionalProperties`关键字用于控制额外内容的处理，即名称未在`properties`关键字中列出的属性 。默认情况下，允许任何其他属性。
 `additionalProperties`关键字可以是一个布尔值或对象。如果`additionalProperties`是布尔值并设置为`false`，则不允许其他属性。
 
-```javascript
+```
 {
   "type": "object",
   "properties": {
@@ -114,7 +112,7 @@ additionalProperties|true or false or object
 `{ "number": 1600, "street_name": "Pennsylvania", "street_type": "Avenue", "direction": "NW" }` <span style="color: red">×</span>
 
 ### 4.2 **type|Array**
-```javascript
+```
 
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
@@ -142,7 +140,7 @@ patternProperties|-|[示例](https://json-schema.org/understanding-json-schema/r
 
 
 ### 4.3 **type|String**
-```javascript
+```
 {
    "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Product",
@@ -164,12 +162,12 @@ patternProperties|-|[示例](https://json-schema.org/understanding-json-schema/r
 关键字|描述
 :--:|:--:|
 maxLength|定义字符串的最大长度，>=0	
-minLength|定义字符串的最小长度，>=0	 
+minLength|定义字符串的最小长度，>=0
 pattern|用正则表达式约束字符串
 
 
 ### 4.4 **type|Integer**
-```javascript
+```
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "Product",
@@ -198,7 +196,7 @@ exclusiveMaximum|如果存在 "exclusiveMinimum" 并且具有布尔值 true，�
 multipleOf|是某数的倍数，必须大于0的整数
 
 ### 4.5 **type|Number**
-```javascript
+```
 
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
@@ -225,7 +223,7 @@ multipleOf|是某数的倍数，必须大于0的整数
 
 ### 5.1 **allOf**
 满足allOf数组中的所有Json Schema。
-```javascript
+```
 {
     "allOf" : [
         Schema_base
@@ -239,7 +237,7 @@ multipleOf|是某数的倍数，必须大于0的整数
 ```
 Json数据既需要满足Schema_base，又要具备属性"other_pro1"、"other_pro2"。
 > 示例
-```javascript
+```
 {
   "allOf": [
     { "type": "string" },
@@ -252,7 +250,7 @@ Json数据既需要满足Schema_base，又要具备属性"other_pro1"、"other_p
 
 ### 5.2 **anyOf**
 满足anyOf数组中的任意个Schema。
-```javascript
+```
 {
     "anyOf" : [
         Schema1,
@@ -263,7 +261,7 @@ Json数据既需要满足Schema_base，又要具备属性"other_pro1"、"other_p
 ```
 ### 5.3 **oneOf**
 满足且仅满足oneOf数组中的一个Schema，这也是与anyOf的区别。
-```javascript
+```
 {
     "oneOf" : [
         Schema1,
@@ -274,7 +272,7 @@ Json数据既需要满足Schema_base，又要具备属性"other_pro1"、"other_p
 ```
 ### 5.4 **not**
 这个关键字不严格规定Json数据应满足什么要求，它告诉Json不能满足not所对应的Schema
-```javascript
+```
 {
     "not" : {"type" : "string"}
 }
@@ -284,7 +282,7 @@ Json数据既需要满足Schema_base，又要具备属性"other_pro1"、"other_p
 
 ### 6.1 通过`definitions`关键字
 
-```javascript
+```
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
@@ -321,7 +319,7 @@ Json数据既需要满足Schema_base，又要具备属性"other_pro1"、"other_p
 ###  6.2 **$id**
 它声明了Schame的唯一标识符。
 它声明了一个用于$ref解析URI的基URI 。
-```javascript
+```
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
@@ -347,7 +345,7 @@ Json数据既需要满足Schema_base，又要具备属性"other_pro1"、"other_p
 ## 7. 通用关键字
 ### 7.1 **enum**
 可以在任何json schema中出现，其value是一个list，表示json数据的取值只能是list中的某个。
-```javascript
+```
 {
     "type": "string",
     "enum": ["red", "amber", "green"]
@@ -357,7 +355,7 @@ Json数据既需要满足Schema_base，又要具备属性"other_pro1"、"other_p
 
 ### 7.2 **metadata**
 关键字：title，description，default，example
-```javascript
+```
 {
     "title" : "Match anything",
     "description" : "This is a schema that matches anything.",
