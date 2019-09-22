@@ -26,7 +26,61 @@
 [ jianshu  ](https://www.jianshu.com/p/85fda79ee74d)<br/>
 [ tencent  ](https://cloud.tencent.com/developer/article/1444059)<br/>
 
-## 2. js的事件处理机制
+## 2. 浏览器中的 Event Loop
+
+Event Loop 执行顺序如下所示：
+
+* 首先执行同步代码，这属于宏任务
+* 当执行完所有同步代码后，执行栈为空，查询是否有异步代码需要执行
+* 执行所有微任务
+* 当执行完所有微任务后，如有必要会渲染页面
+* 然后开始下一轮 Event Loop，执行宏任务中的异步代码，也就是 setTimeout 中的回调函数
+
+微任务包括 process.nextTick ，promise ，MutationObserver，其中 process.nextTick 为 Node 独有。
+
+宏任务包括 script ， setTimeout ，setInterval ，setImmediate ，I/O ，UI rendering。
+
+这里很多人会有个误区，认为微任务快于宏任务，其实是错误的。因为宏任务中包括了
+script
+，浏览器会先执行一个宏任务，接下来有异步代码的话才会先执行微任务。 
+```
+console.log('script start')
+
+async function async1() {
+  await async2()
+  console.log('async1 end')
+}
+async function async2() {
+  console.log('async2 end')
+}
+async1()
+
+setTimeout(function() {
+  console.log('setTimeout')
+}, 0)
+
+new Promise(resolve => {
+  console.log('Promise')
+  resolve()
+})
+  .then(function() {
+    console.log('promise1')
+  })
+  .then(function() {
+    console.log('promise2')
+  })
+
+console.log('script end')
+// script start => 
+// async2 end => 
+// Promise =>  
+// script end =>  
+// promise1 =>  
+// promise2 =>  
+// async1 end =>  
+// setTimeout
+```
+
 
 ## 3. 类A继承类B实例化A a的原型链是怎样的
 
@@ -54,3 +108,17 @@ const test = new TESTA(11,'t4es');
 console.log(test);
 
 ```
+## 4. 盒模型
+盒模型分两种一种是标准盒模型，一种是ie盒模型
+> 标准盒模型 
+
+标准盒模型元素的实际宽度为
+content+padding+border,可以通过设置属性`box-sizing:content-box`
+修改元素为标准盒模型
+
+> ie盒模型
+
+ie盒模型 padding和border被包含在定义的width和height之内。
+对象的实际宽度就等于设置的width值，即使定义有border和padding也不会改变对象的实际宽度，
+即 ( Element width = width )此属性表现为怪异模式下的盒模型。
+可以通过设置属性`box-sizing:border-box`修改元素为ie盒模型
