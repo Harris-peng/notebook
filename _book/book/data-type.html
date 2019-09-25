@@ -1,0 +1,351 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>数据类型判断 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="type-conversion.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    笔记本
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="json-schame.html">
+            
+                <a href="json-schame.html">
+            
+                    
+                    JsonSchame
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="type-conversion.html">
+            
+                <a href="type-conversion.html">
+            
+                    
+                    类型转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.1.2" data-path="data-type.html">
+            
+                <a href="data-type.html">
+            
+                    
+                    数据类型判断
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >数据类型判断</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x51E0;&#x79CD;&#x5224;&#x65AD;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x65B9;&#x6CD5;&#x7684;&#x533A;&#x522B;">&#x51E0;&#x79CD;&#x5224;&#x65AD;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x65B9;&#x6CD5;&#x7684;&#x533A;&#x522B;</h1>
+<p>es5&#x4E2D;&#x7684;&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x6709;&#xFF1A;<code>Undefined</code>&#x3001;<code>Null</code>&#x3001;<code>Boolean</code>&#x3001;<code>Number</code>&#x3001;<code>String</code>&#x3002;
+es6&#x4E2D;&#x65B0;&#x52A0;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x7C7B;&#x578B; <code>Symbol</code>&#xFF0C;&#x590D;&#x6742;&#x6570;&#x636E;&#x7C7B;&#x578B; <code>Object</code>&#x3001;<code>Array</code>&#x3001;<code>Function</code></p>
+<ul>
+<li><code>typeof</code></li>
+<li><code>instanceof</code></li>
+<li><code>Object.prototype.toString.call()</code></li>
+</ul>
+<h2 id="typeof"><code>typeof</code></h2>
+<p>typeof &#x5BF9;&#x4E8E;&#x539F;&#x59CB;&#x7C7B;&#x578B;&#x6765;&#x8BF4;&#xFF0C;&#x9664;&#x4E86; null &#x90FD;&#x53EF;&#x4EE5;&#x663E;&#x793A;&#x6B63;&#x786E;&#x7684;&#x7C7B;&#x578B;</p>
+<pre><code>    typeof 1 // &quot;number&quot;
+    typeof &apos;a&apos; // &quot;string&quot;
+    typeof true // &quot;boolean&quot;
+    typeof undefined // &quot;undefined&quot;
+    typeof Symbol(1) // &quot;symbol&quot;
+    typeof null // &quot;object&quot;
+</code></pre><p>typeof &#x5BF9;&#x4E8E;&#x5BF9;&#x8C61;&#x6765;&#x8BF4;&#xFF0C;&#x9664;&#x4E86;&#x51FD;&#x6570;&#x90FD;&#x4F1A;&#x663E;&#x793A; <code>object</code>&#xFF0C;&#x6240;&#x4EE5;&#x8BF4; <code>typeof</code> &#x5E76;&#x4E0D;&#x80FD;&#x51C6;&#x786E;&#x5224;&#x65AD;&#x53D8;&#x91CF;&#x5230;&#x5E95;&#x662F;&#x4EC0;&#x4E48;&#x7C7B;&#x578B;</p>
+<pre><code>    typeof (() =&gt; {}) // &apos;function&apos;
+    typeof [] // &quot;object&quot;
+    typeof {} // &quot;object&quot;
+</code></pre><h2 id="instanceof"><code>instanceof</code></h2>
+<p><code>instanceof</code> &#x8FD0;&#x7B97;&#x7B26;&#x7528;&#x6765;&#x5224;&#x65AD;&#x4E00;&#x4E2A;&#x6784;&#x9020;&#x51FD;&#x6570;&#x7684;<code>prototype</code>&#x5C5E;&#x6027;&#x6240;&#x6307;&#x5411;&#x7684;&#x5BF9;&#x8C61;&#x662F;&#x5426;&#x5B58;&#x5728;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x8981;&#x68C0;&#x6D4B;&#x5BF9;&#x8C61;&#x7684;&#x539F;&#x578B;&#x94FE;&#x4E0A;
+&#x5BF9;&#x4E8E;&#x539F;&#x59CB;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x4F7F;&#x7528;<code>instanceof</code>&#x5E76;&#x4E0D;&#x51C6;&#x786E;</p>
+<pre><code>    const Persion = function () {};
+    const persion = new Persion();
+    persion instanceof Persion // true
+
+    const str = &apos;a&apos;;
+    str instanceof String // false  
+
+    const str2 = new String(&apos;a&apos;);
+    str2 instanceof String // true
+</code></pre><h2 id="objectprototypetostringcall"><code>Object.prototype.toString.call()</code></h2>
+<p>&#x901A;&#x8FC7;<code>Object.prototype.toString</code>&#x65B9;&#x6CD5;&#xFF0C;&#x5224;&#x65AD;&#x67D0;&#x4E2A;&#x5BF9;&#x8C61;&#x4E4B;&#x5C5E;&#x4E8E;&#x54EA;&#x79CD;&#x5185;&#x7F6E;&#x7C7B;&#x578B;&#x3002;
+&#x5206;&#x4E3A;<code>null</code>&#x3001;<code>string</code>&#x3001;<code>boolean</code>&#x3001;<code>number</code>&#x3001;<code>undefined</code>&#x3001;<code>Symbol</code>&#x3001;<code>array</code>&#x3001;<code>function</code>&#x3001;<code>object</code>&#x3001;<code>date</code>&#x3001;<code>math</code>&#x3002;</p>
+<pre><code>    Object.prototype.toString.call(null); // &quot;[object Null]&quot;
+    Object.prototype.toString.call(undefined); // &quot;[object Undefined]&quot;
+    Object.prototype.toString.call(&apos;abc&apos;);// &quot;[object String]&quot;
+    Object.prototype.toString.call(123);// &quot;[object Number]&quot;
+    Object.prototype.toString.call(true);// &quot;[object Boolean]&quot;
+    Object.prototype.toString.call(Symbol());// &quot;[object Symbol]&quot;
+
+    **&#x51FD;&#x6570;&#x7C7B;&#x578B;**
+    function fn(){
+      console.log(&quot;test&quot;);
+    }
+    Object.prototype.toString.call(fn); // &quot;[object Function]&quot;
+    **&#x65E5;&#x671F;&#x7C7B;&#x578B;**
+    const date = new Date();
+    Object.prototype.toString.call(date); // &quot;[object Date]&quot;
+    **&#x6570;&#x7EC4;&#x7C7B;&#x578B;**
+    const arr = [1,2,3];
+    Object.prototype.toString.call(arr); // &quot;[object Array]&quot;
+    **&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;**
+    const reg = /[hbc]at/gi;
+    Object.prototype.toString.call(reg); // &quot;[object RegExp]&quot;
+    **&#x81EA;&#x5B9A;&#x4E49;&#x7C7B;&#x578B;**
+    function Person(name, age) { }
+    var person = new Person();
+    Object.prototype.toString.call(person); // &quot;[object Object]&quot;
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="type-conversion.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 类型转换">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"数据类型判断","level":"1.2.1.2","depth":3,"previous":{"title":"类型转换","level":"1.2.1.1","depth":3,"path":"book/type-conversion.md","ref":"book/type-conversion.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"book/data-type.md","mtime":"2019-09-04T13:57:30.226Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-04T15:12:27.021Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
