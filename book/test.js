@@ -51,3 +51,61 @@ function midNum(nums1, nums2) {
   }*/
 }
 midNum([1,2],[3,4]);
+
+const PENDING = 'pending';
+const RESOLVE = 'resolve';
+const REJECT = 'reject';
+function Promise(handel) {
+  this.status = PENDING;
+  this.successList = [];
+  this.catchList = [];
+  this.val = [];
+  if (typeof handel === 'function') {
+    handel(resolve, reject)
+  }
+  this.then = function (success, reject) {
+    return new Promise(function (fulResolve, fulReject) {
+      const wrapSuccess= function () {
+        if (typeof success === 'function') {
+          success();
+        }
+        fulResolve(this.val);
+      }
+      const wrapCatch= function () {
+        if (typeof reject === 'function') {
+          reject();
+        }
+        fulReject(this.val);
+      }
+      this.successList.push(wrapSuccess);
+      this.catchList.push(wrapCatch);
+    })
+  }
+  this.resove = function (data) {
+    if (this.status !== PENDING) {
+      return
+    }
+    this.status = RESOLVE;
+    if (data && data instanceof Promise) {
+      data.then(res => {
+        this.val = res;
+        excSuccess();
+      }).catch(res => {
+        this.val = res;
+        excCatch()
+      })
+    } else {
+      excSuccess();
+    }
+    function excSuccess() {
+      while (this.successList.length > 0) {
+        this.successList.shift()(this.val);
+      }
+    }
+    function excCatch() {
+      while (this.successList.length > 0) {
+        this.catchList.shift()(this.val);
+      }
+    }
+  }
+}
