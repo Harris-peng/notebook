@@ -122,3 +122,41 @@ ie盒模型 padding和border被包含在定义的width和height之内。
 对象的实际宽度就等于设置的width值，即使定义有border和padding也不会改变对象的实际宽度，
 即 ( Element width = width )此属性表现为怪异模式下的盒模型。
 可以通过设置属性`box-sizing:border-box`修改元素为ie盒模型
+
+## 继承
+
+> 组合继承
+
+```javascript
+function Atest() {
+  this.name ='Atest';
+}
+Atest.prototype.say = function() {
+  console.log(this.name)
+}
+function Btest() {
+  Atest.call(this);
+}
+Btest.prototype = new Atest()
+
+```
+> 寄生式组合继承
+
+```javascript
+function Person() {
+  this.name = 'test';
+}
+Person.prototyp.say = function() {
+  console.log(this.name);
+}
+function Child() {
+  Person.call(this, val);
+}
+Child.prototype = Object.create(Person.prototype, {
+    value: Child,
+    enumerable: false,
+    writable: true,
+    configurable: true
+})
+
+```

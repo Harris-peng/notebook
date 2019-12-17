@@ -78,3 +78,8 @@ var isValid = function(s) {
     return true;
 };
 ```
+function test (arr, target) { 
+    let map
+ }
+
+```
