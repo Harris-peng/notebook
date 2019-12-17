@@ -118,3 +118,19 @@ function myInstanceof(left, right) {
 typeof在对值类型number、string、boolean 、null 、 undefined、 以及引用类型的function的反应是精准的；但是，对于对象{ } 、数组[ ] 、null 都会返回object
 
 为了弥补这一点，instanceof 从原型的角度，来判断某引用属于哪个构造函数，从而判定它的数据类型。
+
+### 尾递归
+正常的递归
+```javascript
+function fb (num) {
+	if (num <= 2) return 1;
+	return fb(num -1) + fb(num -2)
+} 
+```
+尾递归实现的fb
+```javascript
+function fb (num,a=1,b=1) {
+	if (num <=2) return b;
+	return fb(num-1,b,a+b)
+} 
+```
