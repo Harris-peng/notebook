@@ -1,7 +1,8 @@
 # 几种判断数据类型方法的区别
 
-es5中的基本数据类型有：`Undefined`、`Null`、`Boolean`、`Number`、`String`。
-es6中新加一个数据类型 `Symbol`，复杂数据类型 `Object`、`Array`、`Function`
+es5中的基本数据类型有：`undefined`、`Null`、`Boolean`、`Number`、`String`。
+es6中新加一个数据类型 `Symbol`，复杂数据类型
+`Object`、`Array`、`Function`
 
 * `typeof`
 * `instanceof`

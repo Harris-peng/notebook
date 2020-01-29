@@ -8,7 +8,7 @@
     *  [git相关](book/git.md)
     *  [面试](book/interview.md)
     *  [JsonSchame](book/json-schame.md)
-    *  [lettcode](book/leetcode.md)
+    *  [leetcode](book/leetcode.md)
     *  [linux命令](book/linux-commend.md)
     *  [笔记](book/note.md)
     *  [正则](book/reg.md)
