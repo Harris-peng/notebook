@@ -11,5 +11,6 @@
     *  [lettcode](book/leetcode.md)
     *  [linux命令](book/linux-commend.md)
     *  [笔记](book/note.md)
+    *  [正则](book/reg.md)
     *  [类型转换](book/type-conversion.md)
 

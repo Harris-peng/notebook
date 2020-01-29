@@ -29,7 +29,7 @@
 
 输入: "{[]}" 输出: true 
 
-```
+```javascript
 var isValid = function(s) {
     if(s.length % 2 !== 0) return false;
     const map = {
@@ -55,27 +55,25 @@ var isValid = function(s) {
     return true;
 };
 
-// 最优解
+// 另一种思路
 var isValid = function(s) {
-    if(s.length % 2 !== 0) return false;
     const map = {
         '(': ')',
         '{': '}',
         '[': ']'
     }
-    let stark = [s[0]];
-    for(let i = 1; i < s.length; i++) {
-        const cur =  map[s[i]];
-        if (cur < 0) {
-            stark.push(cur);
+    let stark = [];
+    for(let i = 0; i < s.length; i++) {
+        const cur =  s[i];
+        if (cur in map) {
+            stark.push(map[cur]);
         } else {
             const val = stark.pop();
             if (cur!== val) return false;
         }
         
     }
-    if (stark.length !== 0) return false;
-    return true;
+    return !Boolean(stark.length);
 };
 ```
 function test (arr, target) { 
