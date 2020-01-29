@@ -9,7 +9,7 @@
 ## 回退未提交的代码到上次push
 
 ```bash
-git checkout package.josn
+git checkout package.json
 git checkout ./src/index.js
 ```
 ## 修改commit信息
