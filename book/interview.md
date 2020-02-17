@@ -42,7 +42,7 @@ Event Loop 执行顺序如下所示：
 
 这里很多人会有个误区，认为微任务快于宏任务，其实是错误的。因为宏任务中包括了
 script
-，浏览器会先执行一个宏任务，接下来有异步代码的话才会先执行微任务。 
+，浏览器会先执行一个宏任务，接下来有异步代码的话才会先执行微任务。
 ```
 console.log('script start')
 
@@ -110,7 +110,7 @@ console.log(test);
 ```
 ## 4. 盒模型
 盒模型分两种一种是标准盒模型，一种是ie盒模型
-> 标准盒模型 
+> 标准盒模型
 
 标准盒模型元素的实际宽度为
 content+padding+border,可以通过设置属性`box-sizing:content-box`
@@ -123,7 +123,7 @@ ie盒模型 padding和border被包含在定义的width和height之内。
 即 ( Element width = width )此属性表现为怪异模式下的盒模型。
 可以通过设置属性`box-sizing:border-box`修改元素为ie盒模型
 
-## 继承
+## 5继承
 
 > 组合继承
 
@@ -160,3 +160,55 @@ Child.prototype = Object.create(Person.prototype, {
 })
 
 ```
+
+## 6 闭包
+闭包产生的本质就是，当前环境中存在指向父级作用域的引用
+>闭包的定义：
+1. 闭包是指有权访问另外一个函数作用域中的变量的函数。
+2. 闭包是指那些能够访问自由变量的函数。 （其中自由变量，指在函数中使用的，但既不是函数参数arguments也不是函数的局部变量的变量，其实就是另外一个函数作用域中的变量。）
+
+>闭包的表现形式
+
+1. 返回一个函数。
+```javascript
+function f1() {
+  var a = 2
+  function f2() {
+    console.log(a);//2
+  }
+  return f2;
+}
+var x = f1();
+x();
+```
+2. 作为函数参数传递
+```javascript
+var a = 1;
+function foo(){
+  var a = 2;
+  function baz(){
+    console.log(a);
+  }
+  bar(baz);
+}
+function bar(fn){
+  // 这就是闭包
+  fn();
+}
+// 输出2，而不是1
+foo();
+
+```
+3. 在定时器、事件监听、Ajax请求、跨窗口通信、Web Workers或者任何异步中，只要使用了回调函数，实际上就是在使用闭包。
+
+4. IIFE(立即执行函数表达式)创建闭包, 保存了全局作用域window和当前函数的作用域，因此可以全局的变量
+5. 
+```javascript
+var a = 2;
+(function IIFE(){
+  // 输出2
+  console.log(a);
+})();
+```
+## 参考：
+[神三元](https://juejin.im/post/5dac5d82e51d45249850cd20)
