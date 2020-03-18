@@ -12,7 +12,7 @@ es6中新加一个数据类型 `Symbol`，复杂数据类型
 
 typeof 对于原始类型来说，除了 null 都可以显示正确的类型
 
-```
+```javascript
     typeof 1 // "number"
     typeof 'a' // "string"
     typeof true // "boolean"
@@ -25,7 +25,7 @@ typeof 对于原始类型来说，除了 null 都可以显示正确的类型
 typeof 对于对象来说，除了函数都会显示 `object`，所以说 `typeof`
 并不能准确判断变量到底是什么类型
 
-```
+```javascript
     typeof (() => {}) // 'function'
     typeof [] // "object"
     typeof {} // "object"
@@ -38,7 +38,7 @@ typeof 对于对象来说，除了函数都会显示 `object`，所以说 `typeo
 运算符用来判断一个构造函数的`prototype`属性所指向的对象是否存在另外一个要检测对象的原型链上
 对于原始数据类型使用`instanceof`并不准确
 
-```
+```javascript
     const Persion = function () {};
     const persion = new Persion();
     persion instanceof Persion // true
@@ -48,13 +48,11 @@ typeof 对于对象来说，除了函数都会显示 `object`，所以说 `typeo
     
     const str2 = new String('a');
     str2 instanceof String // true
-    
-    
 ```
 
 实现 instanceof
 
-```javascript 1.8
+```javascript
 function myInstanceof (left, right) {
   if(typeof left !== 'object' || left === null) return false;
   let prot = Object.getPrototypeOf(left);
@@ -64,8 +62,6 @@ function myInstanceof (left, right) {
     prot = Object.getPrototypeOf(prot);
   }
 }
-
-
 
 ```
 
