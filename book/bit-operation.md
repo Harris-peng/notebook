@@ -151,7 +151,7 @@ const key = 313;
   let decodeResult = decryption(result);     // hello world 位运算
 ```
 
-## **<<** 左移 
+## **<<** 左移
 该操作符会将第一个操作数向左移动指定的位数。向左被移出的位被丢弃，右侧用 0 补充。
 
 例如 3 << 2 的运算图示如下：
@@ -170,14 +170,13 @@ function RGBToHex(rgb){
         return
     }
     let hex = (arr[0]<<16 | arr[1]<<8 | arr[2]).toString(16);
-    // 自动补全第一位
-    if (hex.length < 6) {
+    while (hex.length < 6) {
         hex = '0' + hex;
     }
     return `#${hex}`;
 }
 ```
-## **>>** 右移 
+## **>>** 右移
 该操作符会将第一个操作数向右移动指定的位数。向右被移出的位被丢弃，拷贝最左侧的位以填充左侧。
 由于新的最左侧的位总是和以前相同，符号位没有被改变。所以被称作“符号传播”。
 对任一数值 x 进行右移n, 相当于十进制里的除以10的倍数，
@@ -197,6 +196,7 @@ function hexToRGB(hex){
         hex = hex.replace(/([0-9a-fA-F])/g, '$1$1');
     };
     let num = hex.replace('#', '0x');
+    //hex颜色两位一分 如ff0000 分别计算 ff 00 00 的十进制的值 num >>16 相当于计算 ff0000 --》 ff  16进制转二进制四位一分转成ff需要右移16位
     let r = num >> 16;
     // 0xff = 255
     let g = num >> 8 & 0xff;

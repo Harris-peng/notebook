@@ -275,3 +275,108 @@ const InnerArraySort = (array, length, comparefn) => {
     }
     quickSort(array, 0, length);
 }
+const swap = function (arr, i, j) {
+    const val = arr[i]
+    arr[i] = arr[j];
+    arr[j] = val;
+}
+function bubble(array = [], sort) {
+
+    for (let i = array.length - 1; i > 0; i--) {
+        // 从 0 到 `length - 1` 遍历
+        for (let j = 0; j < i; j++) {
+            if (sort(array[j], array[j + 1])) swap(array, j, j + 1)
+        }
+    }
+    return array;
+
+}
+function sort(a,b) {
+    return (a - b) > 0
+}
+function insert(array, sort) {
+    const len = array.length;
+    for (let i=1; i< len; i++) {
+        for (let j=i; j>0; j--) {
+            if(sort(array[j], array[j-1])){
+                swap(array, j, j - 1)
+            }
+        }
+    }
+    return array;
+}
+
+function selection (array, sort) {
+    const len = array.length;
+    for (let i=0; i< len; i++) {
+        let index = i;
+        for (let j=i+1; j<len; j++) {
+            if (sort(array[index], array[j])) index = j;
+        }
+        swap(array, i, index)
+    }
+    return array;
+}
+
+function mergeSort(arr) {
+    merge(arr, 0, arr.length-1)
+    return arr;
+}
+function merge(arr, L, R) {
+    const M = mid(L, R);
+    if (L === R) return
+    merge(arr, L, M);
+    merge(arr, M+1, R);
+    mergeinto(arr, L, M , R)
+    return arr;
+}
+function mergeinto(arr, L, M, R) {
+    const temp = [];
+    let i = L,j = M+1;
+    while (i <= M && j<= R) {
+        if (sort(arr[i], arr[j])) {
+            temp.push(arr[i])
+            i++;
+        } else {
+            temp.push(arr[j])
+            j++;
+        }
+    }
+    while (i<= M) {
+        temp.push(arr[i])
+        i++;
+    }
+    while (j<= R) {
+        temp.push(arr[j])
+        j++;
+    }
+    for (let n= 0;n<temp.length;n++) {
+        arr[n+L] = temp[n]
+    }
+    return arr;
+}
+function mid(a, b) {
+    return Math.floor((a + b)/2)
+}
+
+
+function quckicSort(arr, L = 0, R = arr.length-1) {
+    if (L >= R) return
+    const value = arr[(L + R) >> 1];
+    let i = L;
+    let j = R;
+    while (i <= j) {
+        while (sort(arr[i], value)) {
+            i++
+        }
+        while (sort(value, arr[j]) ) {
+            j--
+        }
+        if (i <= j) {
+            swap(arr, i++, j--);
+        }
+    }
+    quckicSort(arr, L, i-1)
+    quckicSort(arr, i, R)
+    return arr;
+}

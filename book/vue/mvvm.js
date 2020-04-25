@@ -48,3 +48,25 @@ class Watcher {
 class Compare {
 
 }
+const arrayMetheds = ['slice', 'pop', 'push', 'unshift', 'splice'];
+const proto = Object.create(obj.prototype);
+const setMetheds = function (obj) {
+  arrayMetheds.forEach(methed => {
+    const origin = obj[methed];
+    proto[methed] = function (...arg) {
+      const val = origin.apply(this, arg);
+      let instert;
+      switch (methed) {
+        case "push":
+        case "unshift":
+          instert = arg;
+        case "splice":
+          instert = arg.slice(2);
+      }
+      if (instert) this.__ob__.observeArray(instert);
+      this.__ob__.notify();
+      return val;
+    }
+  })
+  return proto;
+}
