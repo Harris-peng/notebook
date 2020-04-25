@@ -3,7 +3,7 @@
 ## 软连接
 **创建软链接**
 
-ln -s 【目标目录】 【软链接地址】
+ln -s 【源文件或者目录】 【软链接地址】
 > 备注:
 
 软链接创建需要同级目录下没有同名的文件。
@@ -17,7 +17,21 @@ rm -rf 【软链接地址】
 
 **修改**
 
-ln -snf 【新目标目录】 【软链接地址】
+ln -snf 【新目标目录或文件】 【软链接地址】
+
+## 设置path
+
+linux下为node及node下载的所以全局包设置环境变量
+```shell
+export NODE_HOME = /node-v12.12.1/bin/  // 软件包下载的路径
+export PATH = $NODE_HOME:$PATH
+
+```
+单独设置包的环境变量可以通过在  /usr/local/bin/ 下建立一个软链指向执行包文件的方式。
+```shell script
+ln -s /home/jamey/programs/pycharm-2019.1.3/bin/run-charm.sh /usr/local/bin/charm
+```
+
 
 ## scp上传
 
