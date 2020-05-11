@@ -1,6 +1,53 @@
 #笔记
 ## CSS
 `-webkit-user-drag: element;` 和`draggable` 同时使用会导致 `draggable`失效
+### BFC
+[bfc](https://my.oschina.net/u/2612473/blog/2221555)
+
+## DOM
+
+### <!DOCTYPE>的作用
+1、定义：
+
+\<!DOCTYPE>标签是一种标准通用标记语言的文档类型声明，它的目的是要告诉标准通用标记语言解析器，它应该使用什么样的文档类型定义（DTD）来解析文档。
+\<!DOCTYPE> 声明必须是 HTML 文档的第一行，位于 \<html> 标签之前。
+2、作用：
+
+声明文档的解析类型(document.compatMode)，避免浏览器的怪异模式。
+
+* document.compatMode：
+* BackCompat：怪异模式，浏览器使用自己的怪异模式解析渲染页面。
+* CSS1Compat：标准模式，浏览器使用W3C的标准解析渲染页面。
+
+> 这个属性会被浏览器识别并使用，但是如果你的页面没有DOCTYPE的声明，那么compatMode默认就是BackCompat，
+浏览器按照自己的方式解析渲染页面，那么，在不同的浏览器就会显示不同的样式。
+如果你的页面添加了<!DOCTYPE html>那么，那么就等同于开启了标准模式
+那么浏览器就得老老实实的按照W3C的标准解析渲染页面，这样一来，你的页面在所有的浏览器里显示的就都是一个样子了。
+这就是<!DOCTYPE html>的作用。
+
+[归来仍是你的少年](https://www.jianshu.com/p/74689f390878)
+
+### herf 和 src的区别
+
+我们在开发页面的时候，有时候需要需要引用一些外部的资源，经常分不清href与src，下面我们就来谈谈它们之间到底分别是什么，这样使用的时候就做到心中有数。
+1. href：Hypertext Reference的缩写，超文本引用，它指向一些网络资源，建立和当前元素或者说是本文档的链接关系。  
+在加载它的时候，不会停止对当前文档的处理，浏览器会继续往下走。常用在a、link等标签。
+```javascript
+<a href="http://www.baidu.com"></a>
+<link type="text/css" rel="stylesheet" href="common.css">
+```
+ 如上面所显示的那样，当浏览器加载到link标签时，会识别这是CSS文档，并行下载该CSS文档，但并不会停止对当前页面后续内容的加载。这也是不建议使用@import加载CSS的原因。
+
+2. src：source的所写，表示的是对资源的引用，它指向的内容会嵌入到当前标签所在的位置。由于src的内容是页面必不可少的一部分，
+因此浏览器在解析src时会停下来对后续文档的处理，直到src的内容加载完毕。常用在script、img、iframe标签中，我们建议js文件放在HTML文档的最后面。
+```js
+<img src="img/girl.jpg">
+<frame src="top.html">
+<iframe src="top.html">
+<script src="show.js">
+```
+> 总结：href用于建立当前页面与引用资源之间的关系（链接），而src则会替换当前标签。  
+> 遇到href，页面会并行加载后续内容；而src则不同，浏览器需要加载完毕src的内容才会继续往下走。
 
 ## JavaScript
 
@@ -84,13 +131,17 @@ Function.prototype.myBind = function (context = window) {
 > 代码实现
 
 ```javascript
-function create () {
-  let obj = {};
-  let fun = [].shift.call(arguments);
-  obj.__proro__ = fun.prototype;
-  let res = fun.apply(obj, arguments);
-  return res instanceof Object ? res : obj;
-}
+function create(ctor, ...args) {
+    if(typeof ctor !== 'function'){
+      throw 'newOperator function the first param must be a function';
+    }
+    let obj = Object.create(ctor.prototype);
+    let res = ctor.apply(obj, args);
+    
+    let isObject = typeof res === 'object' && res !== null;
+    let isFunction = typoof res === 'function';
+    return isObect || isFunction ? res : obj;
+};
 ```
     * 创建一个空对象
     * 获取构造函数
@@ -269,7 +320,7 @@ function co(gen) {
       const res = gen.next(val);
       if (res.done) return resolve(res.value);
       res.value.then((res) => {
-        next(val)
+        next(res)
       }, e => {
         reject(e)
       })

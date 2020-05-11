@@ -127,36 +127,41 @@ ie盒模型 padding和border被包含在定义的width和height之内。
 > 组合继承
 
 ```javascript
-function Atest() {
-  this.name ='Atest';
+function Parent() {
+  this.name ='Parent';
 }
-Atest.prototype.say = function() {
+Parent.prototype.say = function() {
   console.log(this.name)
 }
-function Btest() {
-  Atest.call(this);
+function Child() {
+  Parent.call(this);
 }
-Btest.prototype = new Atest()
+Child.prototype = new Parent()
 
 ```
 > 寄生式组合继承
 
 ```javascript
-function Person() {
-  this.name = 'test';
+function Parent(value) {
+  this.val = value
 }
-Person.prototyp.say = function() {
-  console.log(this.name);
+Parent.prototype.getValue = function() {
+  console.log(this.val)
 }
-function Child() {
-  Person.call(this, val);
+
+function Child(value) {
+  Parent.call(this, value)
 }
-Child.prototype = Object.create(Person.prototype, {
+Child.prototype = Object.create(Parent.prototype, {
+  constructor: {
     value: Child,
     enumerable: false,
     writable: true,
     configurable: true
+  }
 })
+
+const child = new Child(1)
 
 ```
 
