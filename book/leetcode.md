@@ -190,18 +190,17 @@ var isValid = function(s) {
     return !Boolean(stark.length);
 };
 ```
-function test (arr, target) {
-    let map
- }
+
 
 ```
 16 * 1/2 8
  8 * 1/2 4
  4 * 1/2 2
  2 * 1/2 1
- 
+
  16 * 1/2^4 = 1
  n * 1/2^k = 1
  n/2^k = 1
  n = 2^k
  k = log2(n)
+```
