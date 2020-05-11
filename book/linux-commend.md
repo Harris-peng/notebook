@@ -23,8 +23,8 @@ ln -snf 【新目标目录或文件】 【软链接地址】
 
 linux下为node及node下载的所以全局包设置环境变量
 ```shell
-export NODE_HOME = /node-v12.12.1/bin/  // 软件包下载的路径
-export PATH = $NODE_HOME:$PATH
+export NODE_HOME=/node-v12.12.1/bin/  // 软件包下载的路径
+export PATH=$NODE_HOME:$PATH
 
 ```
 单独设置包的环境变量可以通过在  /usr/local/bin/ 下建立一个软链指向执行包文件的方式。
